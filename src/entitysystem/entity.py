@@ -1,4 +1,5 @@
-
+import pygame
+from entityComponent import *
 
 class Entity():
     def __init__(self, name, components=None):

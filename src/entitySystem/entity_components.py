@@ -1,4 +1,4 @@
-class EntityComponent:
+class EntityComponents:
     def __init__(self, owner=None):
         self.owner = owner
 

@@ -1,9 +1,9 @@
-import pygame
-from entityComponent import *
+from entitySystem.entity_components import *
 
 class Entity():
     def __init__(self, name, components=None):
         self.name = name or "UnnamedEntity"
+        self.components = components or []
         
     def get_components(self):
         return self.components
@@ -26,3 +26,8 @@ class Entity():
     def update(self, dt):
         for c in self.components:
             c.update(dt)
+
+    def draw(self, surface):
+        for c in self.components:
+            if hasattr(c, "draw"):
+                c.draw(surface)
